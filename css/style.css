@@ -1,0 +1,136 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/*==================== VARIABLES====================*/
+:root {
+
+/*========== Colors ==========*/
+    --primary-color : #3e3e3e;
+    --secondary-color : hsl(28,100%,58%);
+    --light-color : #898888;
+    --link-hover-color : hsl(28,92%,60%);
+
+/*========== Font SIZE ==========*/
+    --big-font-size:  1.6rem;
+    --normal-font-size: 1rem;
+
+/*========== Font FACE ==========*/
+
+    --body-font: 'Lato', sans-serif;;
+
+/*========== Font WEIGHT ==========*/
+    --font-medium: 400;
+    --font-bold: 700;
+
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #E0EAF5;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--primary-color);
+}
+
+.container{
+    display : flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    height: 350px;
+    width: 350px;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem 0 1.5rem;
+    position: relative;
+}
+
+.card__img{
+    display: flex;
+    justify-content: center;
+    height: 220px;
+}
+
+.card__img img{
+    height: 100%;
+    filter: drop-shadow(2px 3px 2px #0d2137);
+    transition: .3s;
+}
+
+.card__favourite--icon{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.card__details{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__category{
+    font-weight: var(--font-medium);
+    font-size: var(--normal-font-size);
+    color: var(--light-color);
+}
+.card__category::before{
+    content: '';
+    border: 1px solid var(--secondary-color);
+    margin-right: 4px;
+    border-radius: 1px;
+}
+.card__price{
+    font-weight: var(--font-bold);
+    font-size: 1.5rem;
+}
+
+.card__title h1{
+    margin-top: 1rem;
+    font-weight: var(--font-medium);
+    font-size: var(--big-font-size);
+}
+
+.card__button{
+    height: 80px;
+    width: 80px;
+    background-color: #E0EAF5;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -7px;
+    right: -11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card__button--icon{
+    display: block;
+    color: #FFF;
+    font-size: var(--big-font-size);
+    background-color: var(--secondary-color);
+    padding: 15px 17px;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+a .card__button--icon:hover{
+    background-color: var(--link-hover-color);
+    padding: 12px 14px;
+    transform: scale(1.25);
+}
+
+.card:hover .card__img img{
+    transform: translateY(-39px) translateX(-20px) scale3d(1.25,1.25,1.25);
+}
